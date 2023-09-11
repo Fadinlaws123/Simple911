@@ -10,7 +10,7 @@
 
 # ❗ Notice
 
-* *Simple911 is a standalone resource with no dependencies, however, this script will not work 100% if you have 1. Another script in your server that does /311 or /911 or 2. Have installed [SimpleCore](https://github.come/Fadinlaws123/SimpleCore) as this script also comes with it's own 911 script built into it. However, aside from those the script should work.*
+* *Simple911 is a standalone resource with no dependencies, however, this script will not work 100% if you have 1. Another script in your server that does /311 or /911 or 2. Have installed [SimpleCore](https://github.com/Fadinlaws123/SimpleCore) as this script also comes with it's own 911 script built into it. However, aside from those the script should work.*
 
 # 💬 Issues / Needing support?
 
