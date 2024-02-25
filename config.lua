@@ -2,10 +2,15 @@ Config = {}
 
 Config.Emergency = {
 
-    Messages = {
-        InvalidArgs = "~w~[~b~Simple911~w~]: ~r~ERROR: ~y~Please state a reason for calling!",
-        CallPDSucess = "~w~[~b~Simple911~w~]: ~g~SUCESS: ~y~Your report has been sent to the police!",
-        CallTowSucess = "~w~[~b~Simple911~w~]: ~g~SUCESS: ~y~Your report has been sent to a tow service nearby!",
+    MessagesSystem = {
+
+        MessageStyle = '1', -- Set the style of how messages appear. | Styles: '1' Above minimap | '2' In Chat
+
+        Messages = {
+            InvalidArgs = "~r~ERROR: ~y~You need to state a reason for calling!",
+            Successful911 = '~g~SUCESS: ~y~Your report has been sent to emergency services!',
+            Successful311 = "~g~SUCESS: ~y~Your report has been sent to your local tow services."
+        }
     },
 
     Logs = {
