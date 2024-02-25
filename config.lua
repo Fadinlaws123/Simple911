@@ -20,7 +20,7 @@ Config.Emergency = {
 
         TowBlip = {
             timeout = 120, -- How long the blip will stay on the map until removed (Seconds)
-            cooldown = 120, -- How long someone has to wait before using the command again. (Seconds)
+            cooldown = 60, -- How long someone has to wait before using the command again. (Seconds)
             enableBlip = true, -- Enable / Disable the blip on the map.
             blipIcon = false, -- Change the map icon to be an icon or just a circle radius (true = icon | false = radius on map.)
             showInChat = true, -- Change it so you can see 311 calls in chat or not.
@@ -31,7 +31,7 @@ Config.Emergency = {
 
         PoliceBlip = {
             timeout = 120, -- How long the blip will stay on the map until removed (Seconds)
-            cooldown = 120, -- How long someone has to wait before using the command again. (Seconds)
+            cooldown = 60, -- How long someone has to wait before using the command again. (Seconds)
             enableBlip = true, -- Enable / Disable the blip on the map.
             blipIcon = false, -- Change the map icon to be an icon or just a circle radius (true = icon | false = radius on map.)
             showInChat = true, -- Change it so you can see 911 calls in chat or not.
