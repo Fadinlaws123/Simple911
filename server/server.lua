@@ -1,4 +1,4 @@
-    RegisterNetEvent('Simple911:Police:Call911')
+RegisterNetEvent('Simple911:Police:Call911')
     AddEventHandler('Simple911:Police:Call911', function(location, msg, x, y, z, name, p)
         local pName = GetPlayerName(source)
         local p = GetPlayerPed(source)
@@ -27,11 +27,27 @@
             })
         end
         if Config.Emergency.Logs.enableLogging == true then
-            sendPoliceDiscord('Simple911 \n', '**→ 911 Called by: __' .. GetPlayerName(source) .. '__ \n ** **→ Report Location: ** *' .. location .. '*\n** → Report Details:** *' .. msg .. '*\n \n**→ Time 911 was called:** *' .. timestamp .. '* \n **→ Command Used: ** *911*')
+            sendPoliceDiscord('Simple911 \n', '**→ 911 Called by: __' .. GetPlayerName(source) .. '__ \n ** **→ Report Location: ** *' .. location .. '*\n** → Report Details:** *' .. msg .. '*\n \n**→ Time 911 was called:** *' .. timestamp .. '* \n **→ Command Used: ** */911*')
         end
         if Config.Emergency.Blips.PoliceBlip.enableBlip then
             TriggerClientEvent('Simple911:Police:Blip', -1, name, x, y, z)
         end
+    end)
+
+    RegisterNetEvent('Simple911:911:Message')
+    AddEventHandler('Simple911:911:Message', function()
+        TriggerClientEvent('chat:addMessage', -1, {
+            color = {0, 204, 204},
+            args = {'[~b~Simple911~w~] ', '~r~ERROR: ~y~911 System is on cooldown! Please wait ' .. Config.Emergency.Blips.PoliceBlip.cooldown .. ' second(s) before calling again!'}
+        })
+    end)
+
+    RegisterNetEvent('Simple911:311:Message')
+    AddEventHandler('Simple911:311:Message', function()
+        TriggerClientEvent('chat:addMessage', -1, {
+            color = {0, 204, 204},
+            args = {'[~b~Simple911~w~] ', '~r~ERROR: ~y~311 System is on cooldown! Please wait ' .. Config.Emergency.Blips.TowBlip.cooldown .. ' second(s) before calling again!'}
+        })
     end)
 
     RegisterNetEvent('Simple911:Tow:Call911')
@@ -63,7 +79,7 @@
             })
         end
         if Config.Emergency.Logs.enableLogging == true then
-            sendTowDiscord('Simple911 \n', '**→ Tow Services were called by: __' .. GetPlayerName(source) .. '__ \n ** **→ Report Location: ** *' .. location .. '*\n** → Report Details:** *' .. msg .. '*\n \n**→ Time a Tow Service was called:** *' .. timestamp .. '* \n **→ Command Used: ** *' .. Config.Emergency.Basic.towCommand .. '*')
+            sendTowDiscord('Simple911 \n', '**→ Tow Services were called by: __' .. GetPlayerName(source) .. '__ \n ** **→ Report Location: ** *' .. location .. '*\n** → Report Details:** *' .. msg .. '*\n \n**→ Time a Tow Service was called:** *' .. timestamp .. '* \n **→ Command Used: ** */tow*')
         end
         if Config.Emergency.Blips.TowBlip.enableBlip then
             TriggerClientEvent('Simple911:Tow:Blip', -1, name, x, y, z)
