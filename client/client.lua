@@ -169,7 +169,7 @@ local onCooldown2 = false
                 SetBlipColour(TowBlip3, Config.Emergency.Blips.TowBlip.blipColor)
                 SetBlipAsShortRange(TowBlip3, true)
                 BeginTextCommandSetBlipName("STRING")
-                AddTextComponentString("Active EmeTowrgency Call by: " .. name)
+                AddTextComponentString("Active Tow Call by: " .. name)
                 EndTextCommandSetBlipName(TowBlip3)
                 SetTimeout(Config.Emergency.Blips.TowBlip.timeout * 1000, function()
                     RemoveBlip(TowBlip3)
