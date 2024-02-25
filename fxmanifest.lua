@@ -3,7 +3,7 @@ game 'gta5'
 
 author 'fadin_laws'
 description 'Simple 911 script for your fivem server!'
-version '1.0.2'
+version '1.0.3'
 
 client_scripts {
     'client/client.lua'
