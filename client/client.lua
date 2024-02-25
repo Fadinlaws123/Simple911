@@ -1,4 +1,6 @@
-    
+local onCooldown = false
+local onCooldown2 = false
+
     TriggerEvent('chat:addSuggestion', '/911', 'Call the police!', {
         {name = 'Report crime!', help = 'Call for police officers to your current location!'}
     })
@@ -8,18 +10,29 @@
     
     RegisterCommand('911', function(source, args)
 
+        if onCooldown == true then
+            Notify('[~b~Simple911~w~]: ~y~You need to wait ~r~' .. Config.Emergency.Blips.PoliceBlip.cooldown .. ' ~y~before calling 911!')
+            return
+        end
+
         local name = GetPlayerName(PlayerId())
         local ped = GetPlayerPed(PlayerId())
         local x, y, z = table.unpack(GetEntityCoords(ped, true))
         local street = GetStreetNameAtCoord(x, y, z)
         local location = GetStreetNameFromHashKey(street)
         local msg = table.concat(args, ' ')
+        
 
         if msg == '' then 
             Notify(Config.Emergency.Messages.InvalidArgs)
         else
             TriggerServerEvent('Simple911:Police:Call911', location, msg, x, y, z, name)
         end
+
+        onCooldown = true
+        SetTimeout(Config.Emergency.Blips.PoliceBlip.cooldown * 1000, function()
+            onCooldown = false
+        end)
     end)
 
     RegisterNetEvent('Simple911:Police:Blip')
@@ -75,6 +88,11 @@
 
     RegisterCommand('311', function(source, args)
 
+        if onCooldown2 == true then
+            Notify('[~b~Simple911~w~]: ~y~You need to wait ~r~' .. Config.Emergency.Blips.TowBlip.cooldown .. ' ~y~before calling 311!')
+            return
+        end
+
         local name = GetPlayerName(PlayerId())
         local ped = GetPlayerPed(PlayerId())
         local x, y, z = table.unpack(GetEntityCoords(ped, true))
@@ -87,6 +105,11 @@
         else
             TriggerServerEvent('Simple911:Tow:Call911', location, msg, x, y, z, name)
         end
+
+        onCooldown2 = true
+        SetTimeout(Config.Emergency.Blips.TowBlip.cooldown * 1000, function()
+            onCooldown2 = false
+        end)
     end)
 
     RegisterNetEvent('Simple911:Tow:Blip')
