@@ -1,19 +1,18 @@
--- Do not touch anything below here --
-
 local branding = 
 [[ 
-  //
-  ||
-  ||	 ____  _                 _       ___  _ _ 
-  ||	/ ___|(_)_ __ ___  _ __ | | ___ / _ \/ / |
-  ||	\___ \| | '_ ` _ \| '_ \| |/ _ \ (_) | | |
-  ||	 ___) | | | | | | | |_) | |  __/\__, | | |
-  ||	|____/|_|_| |_| |_| .__/|_|\___|  /_/|_|_|
-  ||										|_|       
-	||              Made by Fadin_laws   
-	||
-	||]]           
+  //                                                  
+  ||   _____ _                 _     
+  ||  / ____(_)               | |       ____ ______
+  || | (___  _ _ __ ___  _ __ | | ___  / __ <  <  /
+  ||  \___ \| | '_ ` _ \| '_ \| |/ _ \/ /_/ / // / 
+  ||  ____) | | | | | | | |_) | |  __/\__, / // /  
+  || |_____/|_|_| |_| |_| .__/|_|\___/____/_//_/   
+  ||                    | |                                         
+  ||                    |_|     
+  ||               Made by Fadin_laws                      
+  ||]]               
 -- Check for version updates.
+            
 
 Citizen.CreateThread(function()
 	local CurrentVersion = GetResourceMetadata(GetCurrentResourceName(), 'version', 0)
@@ -41,6 +40,7 @@ Citizen.CreateThread(function()
 			else
 				print( branding )			
 				print('  ||    ^2Simple911 is up to date!!^0')
+        print('  ||    ^3For support, join our discord @ ^5https://discord.gg/mxcu8Az8XG!!^0')
 				print('  ||    ^2Your version: ^3' .. CurrentVersion .. '\n^0  ||\n  \\\\\n')
 			end
 		else
