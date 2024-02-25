@@ -9,10 +9,18 @@ local onCooldown2 = false
     })
     
     RegisterCommand('911', function(source, args)
+        local player = source
 
         if onCooldown == true then
-            Notify('[~b~Simple911~w~]: ~y~You need to wait ~r~' .. Config.Emergency.Blips.PoliceBlip.cooldown .. ' ~y~before calling 911!')
-            return
+            if Config.Emergency.MessagesSystem.MessageStyle == '1' then 
+                Notify('[~b~Simple911~w~]: ~y~You need to wait ~r~' .. Config.Emergency.Blips.PoliceBlip.cooldown .. ' second(s) ~y~before calling 911!')
+                return
+            elseif Config.Emergency.MessagesSystem.MessageStyle == '2' then
+                TriggerServerEvent('Simple911:911:Message', -1)
+                return
+            else
+                print('ERROR: Please make sure to select a valid message style via the config!')
+            end
         end
 
         local name = GetPlayerName(PlayerId())
@@ -89,8 +97,15 @@ local onCooldown2 = false
     RegisterCommand('311', function(source, args)
 
         if onCooldown2 == true then
-            Notify('[~b~Simple911~w~]: ~y~You need to wait ~r~' .. Config.Emergency.Blips.TowBlip.cooldown .. ' ~y~before calling 311!')
-            return
+            if Config.Emergency.MessagesSystem.MessageStyle == '1' then 
+                Notify('[~b~Simple911~w~]: ~y~You need to wait ~r~' .. Config.Emergency.Blips.TowBlip.cooldown .. ' second(s) ~y~before calling 911!')
+                return
+            elseif Config.Emergency.MessagesSystem.MessageStyle == '2' then
+                TriggerServerEvent('Simple911:311:Message', -1)
+                return
+            else
+                print('ERROR: Please make sure to select a valid message style via the config!')
+            end
         end
 
         local name = GetPlayerName(PlayerId())
@@ -154,7 +169,7 @@ local onCooldown2 = false
                 SetBlipColour(TowBlip3, Config.Emergency.Blips.TowBlip.blipColor)
                 SetBlipAsShortRange(TowBlip3, true)
                 BeginTextCommandSetBlipName("STRING")
-                AddTextComponentString("Active Tow Call by: " .. name)
+                AddTextComponentString("Active EmeTowrgency Call by: " .. name)
                 EndTextCommandSetBlipName(TowBlip3)
                 SetTimeout(Config.Emergency.Blips.TowBlip.timeout * 1000, function()
                     RemoveBlip(TowBlip3)
