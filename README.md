@@ -1,22 +1,86 @@
-# 📃 About Simple911
+<div align="center">
 
-- _Well we all know how a 911 script should work, and as you know how they work, this one works the same, but gives 2 scripts together rather than one. This script brings you a 311 script as well as a 911 script together. Both having different coloring, commands, and functionality._
+# 🚨 Simple911
 
-# ❓ How to install
+### The original standalone 911 and 311 call resource from SimpleDevelopments.
 
-1. _How to install is simple, all you have to do is download the latest release of the script from https://github.com/Fadinlaws123/Simple911/releases._
-2. _Open the zipped file with either WinRar or 7.zip and extract the file to your desktop._
-3. _Drag and drop `Simple911` into your `\resources` directory and then type `ensure Simple911` in your console. After such the script should work perfectly!_
+<p>
+  <a href="https://simpledevelopments.org/store"><img src="https://img.shields.io/badge/Explore_Our_Store-5865F2?style=for-the-badge&logo=googlechrome&logoColor=white" /></a>
+  <a href="https://discord.gg/RquDVTfDwu"><img src="https://img.shields.io/badge/Join_Our_Discord-5865F2?style=for-the-badge&logo=discord&logoColor=white" /></a>
+  <a href="https://github.com/Fadinlaws123/Simple911"><img src="https://img.shields.io/badge/View_on_GitHub-181717?style=for-the-badge&logo=github&logoColor=white" /></a>
+</p>
 
-# ❗ Notice
+<p>
+  <img src="https://img.shields.io/badge/FiveM-Standalone-FF6B35?style=flat-square&logo=fivem&logoColor=white" />
+  <img src="https://img.shields.io/badge/Status-Legacy-F59E0B?style=flat-square" />
+  <img src="https://img.shields.io/badge/New_Version-Simple911_v2-5865F2?style=flat-square" />
+  <img src="https://img.shields.io/github/stars/Fadinlaws123/Simple911?style=flat-square&logo=github&label=Stars" />
+</p>
 
-- _Simple911 is a standalone resource with no dependencies, however, this script will not work 100% if you have 1. Another script in your server that does /311 or /911 or 2. Have installed [SimpleCore](https://github.com/Fadinlaws123/SimpleCore) as this script also comes with it's own 911 script built into it. However, aside from those the script should work._
+</div>
 
-# 🧑‍💻 Commands
+---
 
-- /911 - Call for Police / Fire / EMS to your location!
-- /311 - Call for Tow Services to your location!
+## 📖 About
 
-# 💬 Issues / Needing support?
+**Simple911** is the original SimpleDevelopments emergency call resource, combining basic `/911` and `/311` commands into one standalone script.
 
-- _If you have any issues / need help setting the script up, you can open a support ticket on our discord @ https://discord.gg/mxcu8Az8XG!_
+This repository is kept available as the legacy version of the project. For the newer rebuilt system with interactive responder cards, call management, unit tracking, on-scene detection, Discord incident logs, and additional configuration, use **[Simple911 v2](https://github.com/Fadinlaws123/Simple911_v2)**.
+
+---
+
+## ✨ Features
+
+- `/911` emergency calls for Police, Fire, and EMS
+- `/311` non-emergency calls for services such as towing
+- Standalone operation
+- No framework dependency
+- Separate call formatting for 911 and 311 requests
+
+---
+
+## 🎮 Commands
+
+| Command | Description |
+| --- | --- |
+| `/911 <message>` | Sends an emergency call with the player's location. |
+| `/311 <message>` | Sends a non-emergency service call. |
+
+---
+
+## 📥 Installation
+
+1. Download the resource and place `Simple911` in your server's resources directory.
+2. Add the following to your `server.cfg`:
+
+```cfg
+ensure Simple911
+```
+
+3. Restart the resource or server.
+
+---
+
+## ⚠️ Compatibility
+
+Avoid running this resource alongside another script that already registers `/911` or `/311` commands. The original **SimpleCore** also includes overlapping emergency-call functionality, so running both systems together may cause conflicts.
+
+---
+
+## 🆕 Looking for the Current Version?
+
+Simple911 has been completely rebuilt as **Simple911 v2**.
+
+**Repository:** https://github.com/Fadinlaws123/Simple911_v2
+
+---
+
+## 🌐 SimpleDevelopments
+
+Simple911 is maintained as a legacy SimpleDevelopments resource for users who still rely on the original system.
+
+<div align="center">
+
+### Keep it Simple. Keep it SimpleDevelopments.
+
+</div>
